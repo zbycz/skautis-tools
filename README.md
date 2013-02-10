@@ -1,19 +1,22 @@
 SkautIS tools
 =============
 Kontakt na autora: pif@skaut.cz
+
 Vizte též: http://casopisy.skaut.cz a www.blanik.info/gskautis
 
 AnonymSkautis - výpis info o oddílu
 -------------
 Viz https://raw.github.com/zbycz/skautis-tools/master/AnonymSkautis/oddily.htm
+
 nebo živá verze na www.blanik.info/oddily
 
 
-SkautisAuth - přilášení na vlastní web
+SkautisAuth - přihlášení na vlastní web
 -----------
 Nejdříve je potřeba zažádat o [registraci aplikace](http://is.skaut.cz/napoveda/programatori.1-zadost-o-registraci-vytvareneho-webu-v-testovacim-skautISu.ashx) do [test-is.skaut.cz](http://test-is.skaut.cz) API.
- * URL adresa: `http://server/path/to/index.php`
+ * URL webu: `http://server/path/to/index.php`
  * URL tokenu: `http://server/path/to/SkautisAuth/token.php`
+ * HTML stránka při přihlášení: `http://server/path/to/SkautisAuth/login_motd.php`
 
 
 1. **Příklad použití:**
@@ -56,11 +59,15 @@ Nejdříve je potřeba zažádat o [registraci aplikace](http://is.skaut.cz/napo
 
 **Testovací údaje do [test-skautisu](http://test-is.skaut.cz):**
 - člověk se záznamem v lokální databázi:
+
   jméno: stredisko.koprivnice
+
   heslo: koprivnice.Web5
 
 - bez záznamu v lokální databázi:
+
   jméno: snem.sneznik.uc
+
   heslo: ucastnik1
 
 

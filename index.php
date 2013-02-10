@@ -2,7 +2,7 @@
 
 require "SkautisAuth/auth.php";
 SkautisAuth::start();
-//tady uz je prihlaseny uzivatel --> 
+//Po tomto volání už projde pouze èlovìk, který má záznam v lokálním seznamu uživatelù.
 
 
 if($_GET['logout']) SkautisAuth::logout();
@@ -13,10 +13,4 @@ echo "<p>SkautisAuth::getUserInfo('jmeno'): " . SkautisAuth::getUserInfo('jmeno'
 
 echo "<p>SkautisAuth::getUserInfo()<br>";
 print_r( SkautisAuth::getUserInfo() );
-
-
-$isdata[jmeno] = SkautisAuth::getUserInfo('jmeno');
-echo("<hr>writlog_here<hr>|||jmeno: ".$isdata[jmeno]);
-
-
 
