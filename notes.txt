@@ -1,0 +1,52 @@
+
+1.
+
+http://application.skautis.cz/UnitRegistry/
+ --> https://is.skaut.cz/Login/?AppId=e40c2f40-6a97-46f2-8c8b-e3e36b102cdc&ReturnUrl=/UnitRegistry/default.aspx
+
+
+https://is.skaut.cz/RemoteComponents/Components/UnitContacts.aspx?AppID=acb330be-7064-4576-881a-a695f47cfbf6&ID_Unit=24207&ChildUnits=True&ChildUnitsFirst=False&ParentUnit=True#UnitContacts"
+
+
+
+
+
+*) PHP knihovna na assemble requiruje neexistující soubory, po zakomentování funguje ok.
+   - chybí class CodeLists
+
+*) Na stránce http://www.assembla.com/spaces/SkautIS/wiki/Prihlaseni_pomoci_skautisu
+se používá $skautis = new SkautIS(), přitom toto volání je zakázané a správně se má používat 
+$skautis = SkautIS::getInstance();
+
+*) skautis login page nemá být v iframu jak se píše na 
+http://is.skaut.cz/napoveda/programatori.2-vlozeni-prihlasovaciho-formulare-skautIS-Remote-Login-do-webove-stranky.ashx
+zatímco příklad zde http://www.assembla.com/spaces/SkautIS/wiki/Prihlaseni_pomoci_skautisu
+ho přímo používá :-)
+
+Po malé úpravě to dokonce i funguje - což by z bezpečnostních důvodů (clicjacking) opravdu fungovat nemělo!
+!!! Doporučuju nastavit skautisu http hlavičku X-Frame-Options: deny, která u rozumných prohlížečů přímo toto zakáže.
+
+
+*) Na stránce http://is.skaut.cz/napoveda/programatori.WS-OrganizationUnit.ashx je UnitAllRegistry asi 6×, 
+odkaz ovšem nikam nevede.
+
+*) K anonymním službám bych uvítal nějaké příklady
+
+
+*) AnonymServiceHelper.php:46            eval("\$unitAllRegistryInput->$key = \"$value\";");
+Proč eval - fuj! Funguje to i bez něj přímo: $unitAllRegistryInput->$key = $value;
+
+
+*) AnonymService by asi měl kontrolovat IP adresu, AppId z http://application.skautis.cz/UnitRegistry/
+   mi normálně funguje odkudkoliv na ostrém skautisu.
+
+*) Stejně tak obrana RemoteComponent přes Http-Referer mi přijde trochu příliš průstřelná.  Pro
+případného zneužitele není nic jednoduššího než neincludovat iframe ale fetchout si stránku serverem a
+vyplivnout jí uživateli. Před tímhle obrana holt není, jakmile jsou na webu údaje veřejné, tak kontext
+se prostě ovlivnit nedá.
+
+   
+*) proč lze podle RegistrationNumber najít jen středisko - oddíl ne?
+
+*) getContatsAnon vrací u "telefon_hlavni" UnitContact->IsSts vždy null
+ 
