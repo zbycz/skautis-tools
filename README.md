@@ -1,12 +1,12 @@
 SkautIS tools
 =============
 Kontakt na autora: pif@skaut.cz
-Vizte též: http://casopisy.skaut.cz a http://blanik.info/gskautis
+Vizte též: http://casopisy.skaut.cz a www.blanik.info/gskautis
 
 AnonymSkautis - výpis info o oddílu
 -------------
 Viz https://raw.github.com/zbycz/skautis-tools/master/AnonymSkautis/oddily.htm
-
+nebo živá verze na www.blanik.info/oddily
 
 
 SkautisAuth - přilášení na vlastní web
@@ -16,7 +16,7 @@ Nejdříve je potřeba zažádat o [registraci aplikace](http://is.skaut.cz/napo
  * URL tokenu: `http://server/path/to/SkautisAuth/token.php`
 
 
-1. Použití:
+1. **Příklad použití:**
 	```php
 	require "SkautisAuth/auth.php";
 	SkautisAuth::start();
