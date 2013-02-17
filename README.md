@@ -36,7 +36,7 @@ Nejdříve je potřeba zažádat o [registraci aplikace](http://is.skaut.cz/napo
 	Array:
     [rc] => 891227/0004
     [jmeno] => Střediskopřivničák Jiří (Slon)
-    [email] => veronika.strnadova@junak.cz
+    [email] => slon@koprivnice.cz
     [key] => 891227#19
     [data] => Array:
             [rč#hash] => 891227#19
