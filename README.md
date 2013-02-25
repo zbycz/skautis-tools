@@ -2,7 +2,8 @@ SkautIS tools
 =============
 Kontakt na autora: pif@skaut.cz
 
-Vizte též: http://casopisy.skaut.cz a www.blanik.info/gskautis
+Vizte též: http://casopisy.skaut.cz a www.blanik.info/gskautis 
+> Skautis tools jsou hrdou součástí http://developers.skautis.cz
 
 AnonymSkautis - výpis info o oddílu
 -------------
