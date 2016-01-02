@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_GET['debugger']) OR defined(ZAPNI_NETTE_DEBUG)){
-	require "nette.min.php";
+	require_once 'nette.min.php';
 	NDebugger::enable(NDebugger::DEVELOPMENT, false);
 }
 

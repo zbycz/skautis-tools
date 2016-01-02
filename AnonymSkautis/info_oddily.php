@@ -1,6 +1,9 @@
 <?php
 
-define("ZAPNI_NETTE_DEBUG", true); //kvůli šablonám
+// kvůli latte šablonám
+require_once '../SkautisAuth/nette.min.php';
+NDebugger::enable(NDebugger::DEVELOPMENT, false);
+
 
 define("applicationAdress", "https://is.skaut.cz/");
 define("appId", "e40c2f40-6a97-46f2-8c8b-e3e36b102cdc"); //ostrý is.blanik.info
@@ -8,6 +11,7 @@ define("appId", "e40c2f40-6a97-46f2-8c8b-e3e36b102cdc"); //ostrý is.blanik.info
 require_once '../SkautisAuth/SkautIS.php';
 $skautis = SkautIS::getInstance();
 
+//šablona pro jeden oddíl
 $tpl = '
 
 	<h2>{$oddil[nazev]} <small>(logo ručně - není anonymně v IS)</small></h2>
@@ -56,17 +60,18 @@ $template->registerFilter(new /*Nette\Latte\Engine*/NLatteFilter);
 $template->setSource($tpl);
 
 
-
+// projdeme všechny oddíly střediska 114.07
 $obj = $skautis->anonymServiceHelper->searchUnit(array('RegistrationNumber'=>'114.07'));
 $oddily = $obj[0]->getSlavesUnits();
 foreach($oddily as $o){
-	$template->oddil = ziskejNaboroveInformace($o->ID);
-	echo $template;
+	$template->oddil = ziskejNaboroveInformace($o->ID); //přiřadíme informace zpracované do pole
+	echo $template; //vypíšeme šablonu
 }
 
 
 
 
+// funkce, která přežvýká data ze skautisu do přehledného assoc pole
 //id oddílu  (24218 == havrani)
 function ziskejNaboroveInformace($id_oddilu){
 	global $skautis;

@@ -7,9 +7,9 @@ Vizte též: http://casopisy.skaut.cz a www.blanik.info/gskautis
 
 AnonymSkautis - výpis info o oddílu
 -------------
-Viz https://raw.github.com/zbycz/skautis-tools/master/AnonymSkautis/oddily.htm
+Třeba nakonfigurovat `SkautisAuth/Conf.php`, poté spustit `AnonymSkautis/info_oddily.php`.
 
-nebo živá verze na www.blanik.info/oddily
+Výsledek viz [AnonymSkautis/oddily.htm](https://rawgit.com/zbycz/skautis-tools/master/AnonymSkautis/oddily.htm) nebo živá verze na www.blanik.info/oddily
 
 
 SkautisAuth - přihlášení na vlastní web
